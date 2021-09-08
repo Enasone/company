@@ -2,6 +2,7 @@
 .main_container {
   display: flex;
   justify-content: center;
+  padding-bottom: 30px;
 }
 
 .welcome_container {
@@ -46,4 +47,26 @@
   background-color: #e5e5e5;
 }
 
+.info_container {
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 0 0;
+}
+
+.info_block {
+  width: 49%;
+  border: 1px solid #797979;
+  border-radius: 5px;
+}
+
+.info_description_block {
+  padding: 20px;
+}
+
+.info_block_btn {
+  display: flex;
+  justify-content: end;
+}
 
