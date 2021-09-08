@@ -12,54 +12,25 @@
       </div>
 
       <div class="welcome_down">
-        <span>You have 100 transactions</span>
+        <span>You have {{ total }} transactions</span>
       </div>
     </div>
 
   </div>
 
-  <div class="info_container">
+  <div
+    class="info_container"
+  >
 
-    <div class="info_block">
+    <div
+      class="info_block"
+      *ngFor="let company of companies"
+    >
       <div class="info_description_block">
-        <h3>123</h3>
-        <p>Income</p>
+        <h3>{{ company.count }}</h3>
+        <p>{{ company. title }}</p>
         <div class="info_block_btn">
-          <button class="btn btn-primary">See all</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="info_block">
-      <div class="info_description_block">
-        <h3>123</h3>
-        <p>Income</p>
-        <div class="info_block_btn">
-          <button class="btn btn-primary">See all</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="info_container">
-
-    <div class="info_block">
-      <div class="info_description_block">
-        <h3>123</h3>
-        <p>Income</p>
-        <div class="info_block_btn">
-          <button class="btn btn-primary">See all</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="info_block">
-      <div class="info_description_block">
-        <h3>123</h3>
-        <p>Income</p>
-        <div class="info_block_btn ">
-          <button class="btn btn-primary">See all</button>
+          <button class="btn btn-primary info_btn">See all</button>
         </div>
       </div>
     </div>

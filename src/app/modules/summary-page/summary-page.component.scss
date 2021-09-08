@@ -51,6 +51,7 @@
   width: 40%;
   margin: 0 auto;
   display: flex;
+  flex-flow: wrap;
   justify-content: space-between;
   padding: 10px 0 0 0;
 }
@@ -59,6 +60,7 @@
   width: 49%;
   border: 1px solid #797979;
   border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 .info_description_block {
@@ -68,5 +70,9 @@
 .info_block_btn {
   display: flex;
   justify-content: end;
+}
+
+.info_btn {
+  width: 50%;
 }
 
