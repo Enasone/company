@@ -5,20 +5,50 @@
       <nav>
         <div class="tabs_blocks_nav">
 
-          <div class="title_nav">
-            <a>Income</a>
+          <div
+            class="title_nav"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}"
+          >
+            <a
+              routerLink="/navigator"
+              [queryParams]="{tab: 0}"
+            ><span>Income</span></a>
+
           </div>
 
-          <div class="title_nav">
-            <a>Outcome</a>
+          <div
+            class="title_nav"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}"
+          >
+            <a
+              routerLink="/navigator"
+              [queryParams]="{tab: 1}"
+            ><span>Investments</span></a>
           </div>
 
-          <div class="title_nav">
-            <a>Loans</a>
+          <div
+            class="title_nav"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}"
+          >
+            <a
+              routerLink="/navigator"
+              [queryParams]="{tab: 2}"
+            ><span>Outcome</span></a>
           </div>
 
-          <div class="title_nav" style="border-right: none">
-            <a>Investments</a>
+          <div
+            class="title_nav"
+            style="border-right: none"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}"
+          >
+            <a
+              routerLink="/navigator"
+              [queryParams]="{tab: 3}"
+            ><span>Loans</span></a>
           </div>
 
         </div>

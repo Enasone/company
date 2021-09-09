@@ -24,13 +24,17 @@
 
     <div
       class="info_block"
-      *ngFor="let company of companies"
+      *ngFor="let company of companies; let idx = index"
     >
       <div class="info_description_block">
         <h3>{{ company.count }}</h3>
         <p>{{ company. title }}</p>
         <div class="info_block_btn">
-          <button class="btn btn-primary info_btn">See all</button>
+          <button
+            class="btn btn-primary info_btn"
+            [routerLink]="['/navigator']"
+            [queryParams]="{tab: idx}"
+          >See all</button>
         </div>
       </div>
     </div>

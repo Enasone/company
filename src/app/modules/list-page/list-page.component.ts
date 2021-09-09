@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {EmployeesService} from "../../shared/employees.service";
+import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-list-page',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPageComponent implements OnInit {
 
-  constructor() { }
+  numTab: number = 0
+
+  constructor(
+    private employees: EmployeesService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe( (params: Params) => {
+      this.numTab = params.tab
+    })
   }
 
 }
