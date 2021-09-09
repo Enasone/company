@@ -1,7 +1,9 @@
 .main_container_nav {
   padding-top: 25px;
-  width: 50%;
-  margin: 0 auto;
+  width: 41%;
+  margin: 10px auto;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 
 .tabs_blocks_nav {
@@ -25,6 +27,25 @@
 
 .container_info {
   display: flex;
-  justify-content: space-evenly;
-  padding-top: 50px;
+  margin: 50px 0 50px 0;
+}
+
+.block_name {
+  text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.blocks_info {
+  width: 50%;
+}
+
+hr {
+  margin: 10px auto;
+  padding: 0;
+  width: 80%;
 }
