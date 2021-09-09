@@ -1,0 +1,30 @@
+.main_container_nav {
+  padding-top: 25px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.tabs_blocks_nav {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.title_nav {
+  width: 200px;
+  height: 60px;
+  border-radius: 20px 20px 0 0;
+  border-right: 1px solid;
+  border-top: 1px solid;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.container_info {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
