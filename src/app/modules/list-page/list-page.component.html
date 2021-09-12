@@ -6,49 +6,16 @@
         <div class="tabs_blocks_nav">
 
           <div
+            *ngFor="let tab of tabs; let idx = index"
             class="title_nav"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{exact:true}"
           >
             <a
               routerLink="/navigator"
-              [queryParams]="{tab: 0}"
-            ><span>Income</span></a>
+              [queryParams]="{tab: idx}"
+            ><span>{{tab | titlecase }}</span></a>
 
-          </div>
-
-          <div
-            class="title_nav"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact:true}"
-          >
-            <a
-              routerLink="/navigator"
-              [queryParams]="{tab: 1}"
-            ><span>Investments</span></a>
-          </div>
-
-          <div
-            class="title_nav"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact:true}"
-          >
-            <a
-              routerLink="/navigator"
-              [queryParams]="{tab: 2}"
-            ><span>Outcome</span></a>
-          </div>
-
-          <div
-            class="title_nav"
-            style="border-right: none"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact:true}"
-          >
-            <a
-              routerLink="/navigator"
-              [queryParams]="{tab: 3}"
-            ><span>Loans</span></a>
           </div>
 
         </div>

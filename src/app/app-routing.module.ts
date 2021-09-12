@@ -5,7 +5,8 @@ import {ListPageComponent} from "./modules/list-page/list-page.component";
 
 const routes: Routes = [
   { path: '', component: SummaryPageComponent },
-  { path: 'navigator', component: ListPageComponent}
+  { path: 'navigator', component: ListPageComponent},
+  { path: '**', redirectTo: '/'}
 ];
 
 @NgModule({

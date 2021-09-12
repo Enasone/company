@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EmployeesService} from "../../shared/employees.service";
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 
 @Component({
   selector: 'app-list-page',
@@ -9,20 +9,45 @@ import {ActivatedRoute, Params} from "@angular/router";
 })
 export class ListPageComponent implements OnInit {
 
-  numTab: number = 0
+  tabs: Array<string> = []
   infoWin: any
 
   constructor(
-    private employees: EmployeesService,
-    private route: ActivatedRoute) { }
+    private employeesService: EmployeesService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe( (params: Params) => {
-      this.numTab = params.tab
+    // Сортировка и занесение уникальных данных из "type" в массив (['income', 'outcome'] и т.д)
+    this.tabs = this.employeesService.employees.data.map( arr => arr.type)
+      .filter((v, i, a) => a.indexOf(v) === i)
+      .sort()
 
-      this.infoWin = this.employees.employees.data.filter( arr => arr.type == 'income')
-      console.log(this.infoWin)
+    // Подписка на отслеживание Query параметра в URL (если query параметр поменялся,
+    // то вызывается данная конструкция)
+    this.route.queryParams.subscribe( (params: Params) => {
+      let numTab = params.tab
+      // Защита от перехода по несуществующему query параметру (?tab=99999)
+      if(numTab > this.tabs.length - 1) {
+        this.router.navigate(['/navigator'], {
+          queryParams: {
+            'tab': numTab = 0
+          }
+        })
+      }
+
+      this.infoTab(numTab)
     })
+  }
+
+  // При изменении данных в query параметрах, они передаются и идет фильтрация по массиву tabs.
+  infoTab(num: number): void {
+    let dataInfo = this.employeesService.employees.data
+
+    // Данные из query параметра мы передаем как индекс массиву tabs,
+    // чтобы отфильтровать нужных сотрудников данной компании
+    this.infoWin = dataInfo.filter( arr => arr.type == this.tabs[num])
   }
 
 }

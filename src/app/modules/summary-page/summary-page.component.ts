@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {EmployeesService} from "../../shared/employees.service";
 import {CompanyNameInterface} from "../../shared/company-name.interface";
 
@@ -21,14 +21,20 @@ export class SummaryPageComponent implements OnInit {
   }
 
   count(): void {
+    let data = this.tabs.employees.data
+    // Сортировка и занесение уникальных данных из "type" в массив (['income', 'outcome'] и т.д)
+    let nameTabs = data.map( arr => arr.type)
+      .filter((v, i, a) => a.indexOf(v) === i)
+      .sort()
+
+    // Общее кол-во транзакций
     this.total = this.tabs.employees.total
 
-    this.companies = [
-      { title: 'Income', count: this.tabs.employees.data.filter( arr => arr.type == 'income').length},
-      { title: 'Investment', count: this.tabs.employees.data.filter( arr => arr.type == 'investment').length},
-      { title: 'Outcome', count: this.tabs.employees.data.filter( arr => arr.type == 'outcome').length},
-      { title: 'Loan', count: this.tabs.employees.data.filter( arr => arr.type == 'loan').length}
-    ]
+    for (let i = 0; i < nameTabs.length; i++) {
+      this.companies.push({title: nameTabs[i], count: data.filter( arr => arr.type == nameTabs[i]).length})
+    }
+
+
   }
 
 }
