@@ -27,20 +27,6 @@
   margin: 50px 0 50px 0;
 }
 
-.block_name {
-  text-align: center;
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-.blocks_info {
-  width: 50%;
-}
-
 hr {
   margin: 10px auto;
   padding: 0;
@@ -55,4 +41,13 @@ a {
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
+}
+
+.blocks_info {
+  width: 100%;
+}
+
+.element_info {
+  display: flex;
+  justify-content: space-evenly;
 }

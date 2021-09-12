@@ -62,35 +62,23 @@
   </div>
   <div class="container_info">
     <div class="blocks_info">
-      <div class="block_name">
+      <div class="element_info">
 
         <span>Name</span>
-
-        <hr/>
-
-        <ul>
-          <li>123</li>
-          <hr/>
-          <li>535</li>
-        </ul>
-
-      </div>
-    </div>
-
-    <div class="blocks_info">
-      <div class="block_name">
-
         <span>Account</span>
 
-        <hr/>
+      </div>
 
-        <ul>
-          <li>123</li>
-          <hr/>
-          <li>535</li>
+      <hr>
 
-        </ul>
+      <div *ngFor="let info of infoWin">
+        <div class="element_info">
+          <span>{{ info.name.first }} {{info.name.last }}</span>
+          <span> {{ info.amount }}</span>
+        </div>
+        <hr>
       </div>
     </div>
   </div>
+
 </div>

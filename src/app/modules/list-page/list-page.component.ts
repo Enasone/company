@@ -10,6 +10,7 @@ import {ActivatedRoute, Params} from "@angular/router";
 export class ListPageComponent implements OnInit {
 
   numTab: number = 0
+  infoWin: any
 
   constructor(
     private employees: EmployeesService,
@@ -18,6 +19,9 @@ export class ListPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.queryParams.subscribe( (params: Params) => {
       this.numTab = params.tab
+
+      this.infoWin = this.employees.employees.data.filter( arr => arr.type == 'income')
+      console.log(this.infoWin)
     })
   }
 
